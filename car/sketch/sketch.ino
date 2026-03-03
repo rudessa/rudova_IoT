@@ -34,20 +34,25 @@ void backward(int speed){
 void turn_left(int steepness){ //speepness not a speed
   //steepness is how steep is turn 
   //
+  int right_speed = 255;                   
+  int left_speed = 255 - steepness;       // чем круче поворот, тем медленнее левое колесо
+  move(FORWARD_LEFT, left_speed, FORWARD_RIGHT, right_speed);
 }
 
 void turn_right(int steepness){
+  int left_speed = 255;                    
+  int right_speed = 255 - steepness;       // чем круче поворот, тем медленнее правое колесо
+  move(FORWARD_LEFT, left_speed, FORWARD_RIGHT, right_speed);
 
 }
 
 void rotate_left(int speed){
-
+  move(BACKWARD_LEFT, speed, FORWARD_RIGHT, speed);
 }
 
 void rotate_right(int speed){
-
+  move(FORWARD_LEFT, speed, BACKWARD_RIGHT, speed);
 }
-
 
 
 void setup(){
@@ -61,10 +66,25 @@ void setup(){
 }
 
 
-void loop(){
-  digitalWrite(DIR_LEFT, LOW);
-  digitalWrite(DIR_RIGHT, HIGH);
-  digitalWrite(SPEED_LEFT, LOW);
-  digitalWrite(SPEED_RIGHT, HIGH);
+void loop() {
+  forward(255);
+  delay(2000);
+
+  backward(255);
+  delay(2000);
+
+  turn_left(255);        
+  delay(2000);
+
+  turn_right(255);        
+  delay(2000);
+
+  rotate_right(255);    
+  delay(200);
+
+  rotate_left(255);    
+  delay(2000);
+
+  delay(1000);
 }
 
