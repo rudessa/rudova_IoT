@@ -7,7 +7,7 @@
 #define FORWARD_LEFT LOW
 #define BACKWARD_LEFT HIGH
 #define FORWARD_RIGHT HIGH
-#define BACKWARD_LEFT LOW
+#define BACKWARD_RIGHT LOW
 
 
 
@@ -22,11 +22,12 @@ void move(bool left_dir, int left_speed, bool right_dir, int right_speed) {
 
 
 void forward(int speed){
-  move(FORWARD_LEFT, speed , FORWARD_RIGHT, spped );
+  move(FORWARD_LEFT, speed , FORWARD_RIGHT, speed);
 
 }
 
 void backward(int speed){
+  move(BACKWARD_LEFT, speed, BACKWARD_RIGHT, speed);
 
 }
 
