@@ -18,8 +18,35 @@ void move(bool left_dir, int left_speed, bool right_dir, int right_speed) {
   digitalWrite(DIR_RIGHT, right_dir);
   analogWrite(SPEED_LEFT, left_speed);
   analogWrite(SPEED_RIGHT, right_speed);
+}
+
+
+void forward(int speed){
+  move(FORWARD_LEFT, speed , FORWARD_RIGHT, spped );
 
 }
+
+void backward(int speed){
+
+}
+
+void turn_left(int steepness){ //speepness not a speed
+  //steepness is how steep is turn 
+  //
+}
+
+void turn_right(int steepness){
+
+}
+
+void rotate_left(int speed){
+
+}
+
+void rotate_right(int speed){
+
+}
+
 
 
 void setup(){
